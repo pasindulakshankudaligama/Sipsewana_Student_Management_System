@@ -25,6 +25,7 @@ public class FactoryConfiguration {
         }
         org.hibernate.cfg.Configuration configuration = new Configuration()
                 .addAnnotatedClass(Student.class);
+
         configuration.setProperties(properties);
         SessionFactory sessionFactory = configuration.buildSessionFactory();
     }
