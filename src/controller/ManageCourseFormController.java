@@ -1,5 +1,7 @@
 package controller;
 
+import bo.BOFactory;
+import bo.custom.impl.StudentBOImpl;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -21,6 +23,8 @@ public class ManageCourseFormController {
     public AnchorPane cmContext;
     public Label lblDate;
     public Label lblTime;
+
+    StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.STUDENT);
 
     public void initialize(){
         loadDateAndTime();
@@ -49,7 +53,7 @@ public class ManageCourseFormController {
         Stage window = (Stage) cmContext.getScene().getWindow();
         window.setScene(new Scene(load));
         window.centerOnScreen();
-        window.setResizable(false);
+        //window.setResizable(false);
         System.out.println("");
     }
 }

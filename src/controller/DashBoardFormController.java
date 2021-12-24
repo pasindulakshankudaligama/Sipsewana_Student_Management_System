@@ -21,7 +21,7 @@ public class DashBoardFormController {
         Stage window = (Stage) DashBoardContext.getScene().getWindow();
         window.setScene(new Scene(load));
         window.centerOnScreen();
-        window.setResizable(false);
+       // window.setResizable(false);
     }
 
     public void btnManageRegistrationOnAction(ActionEvent actionEvent) throws IOException {
@@ -30,7 +30,7 @@ public class DashBoardFormController {
         Stage window = (Stage) DashBoardContext.getScene().getWindow();
         window.setScene(new Scene(load));
         window.centerOnScreen();
-        window.setResizable(false);
+        //window.setResizable(false);
     }
 
     public void btnManageCourseOnAction(ActionEvent actionEvent) throws IOException {
@@ -39,7 +39,7 @@ public class DashBoardFormController {
         Stage window = (Stage) DashBoardContext.getScene().getWindow();
         window.setScene(new Scene(load));
         window.centerOnScreen();
-        window.setResizable(false);
+       // window.setResizable(false);
     }
 
     public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
@@ -48,7 +48,7 @@ public class DashBoardFormController {
         Stage window = (Stage) DashBoardContext.getScene().getWindow();
         window.setScene(new Scene(load));
         window.centerOnScreen();
-        window.setResizable(false);
+       // window.setResizable(false);
     }
 
 }

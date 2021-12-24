@@ -19,6 +19,6 @@ public class LoginFormController {
         Stage window = (Stage) lfContext.getScene().getWindow();
         window.setScene(new Scene(load));
         window.centerOnScreen();
-        window.setResizable(false);
+       // window.setResizable(false);
     }
 }

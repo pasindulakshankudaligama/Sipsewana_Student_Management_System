@@ -1,5 +1,9 @@
 package controller;
 
+import bo.BOFactory;
+import bo.custom.impl.ProgramBOImpl;
+import bo.custom.impl.StudentBOImpl;
+import dto.ProgramDTO;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -23,6 +27,8 @@ public class ManageStudentRegistrationFormController {
     public Label lblDate;
     public Label lblTime;
 
+
+    ProgramBOImpl programBO = (ProgramBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.PROGRAM);
 
     public void initialize(){
         loadDateAndTime();
@@ -51,6 +57,6 @@ public class ManageStudentRegistrationFormController {
         Stage window = (Stage) srContext.getScene().getWindow();
         window.setScene(new Scene(load));
         window.centerOnScreen();
-        window.setResizable(false);
+        //window.setResizable(false);
     }
 }

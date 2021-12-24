@@ -1,6 +1,8 @@
 package bo;
 
 
+import bo.custom.impl.ProgramBOImpl;
+import bo.custom.impl.StudentBOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -17,24 +19,17 @@ public class BOFactory {
 
     public SuperBO getBO(BoTypes types) {
         switch (types) {
-            case ITEM:
-               // return new ItemBOImpl();
-            case CUSTOMER:
-                //return new CustomerBOImpl();
-            case PURCHASE_ORDER:
-                //return new PurchaseOrderBOImpl();
-            case MANAGE_ORDER:
-               // return new ManageOrderBOImpl();
-            case USER:
-               // return new UserBOImpl();
-            case LOGIN:
-               // return new LogInBOImpl();
+            case STUDENT:
+                return new StudentBOImpl();
+            case PROGRAM:
+                return new ProgramBOImpl();
+
             default:
                 return null;
         }
     }
 
     public enum BoTypes {
-        CUSTOMER, ITEM, PURCHASE_ORDER,MANAGE_ORDER,USER,LOGIN
+        STUDENT, PROGRAM
     }
 }
