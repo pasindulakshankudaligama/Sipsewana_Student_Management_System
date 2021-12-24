@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="srContext" prefHeight="697.0" prefWidth="1219.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageStudentRegistrationFormController">
+   <children>
+      <ImageView fitHeight="102.0" fitWidth="148.0" layoutX="14.0" layoutY="21.0">
+         <image>
+            <Image url="@../assest/home.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="165.0" layoutY="-17.0" prefHeight="140.0" prefWidth="812.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER">
+         <font>
+            <Font name="Cooper Black" size="63.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="984.0" layoutY="17.0" prefHeight="43.0" prefWidth="165.0">
+         <font>
+            <Font name="Calisto MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="984.0" layoutY="47.0" prefHeight="43.0" prefWidth="165.0">
+         <font>
+            <Font name="Calisto MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView layoutX="59.0" layoutY="509.0" prefHeight="150.0" prefWidth="1120.0" stylesheets="@../style.css">
+        <columns>
+          <TableColumn prefWidth="82.0" text="Reg.No" />
+          <TableColumn prefWidth="172.0" text="Name" />
+            <TableColumn prefWidth="64.0" text="Age" />
+            <TableColumn prefWidth="127.0" text="NIC" />
+            <TableColumn prefWidth="149.0" text="Contact Number" />
+            <TableColumn prefWidth="155.0" text="Address" />
+            <TableColumn prefWidth="128.0" text="DOB" />
+            <TableColumn prefWidth="142.0" text="E-Mail" />
+            <TableColumn prefWidth="100.0" text="Gender" />
+        </columns>
+      </TableView>
+      <Label layoutX="169.0" layoutY="33.0" prefHeight="140.0" prefWidth="812.0" text="STUDENT REGISTRATION" textAlignment="CENTER">
+         <font>
+            <Font name="Cooper Black" size="39.0" />
+         </font>
+      </Label>
+      <JFXTextField focusColor="#001f9a" labelFloat="true" layoutX="66.0" layoutY="148.0" prefHeight="25.0" prefWidth="148.0" promptText="Reg.No" />
+      <JFXTextField focusColor="#001f9a" labelFloat="true" layoutX="271.0" layoutY="148.0" prefHeight="25.0" prefWidth="329.0" promptText="Name" />
+      <JFXTextField focusColor="#001f9a" labelFloat="true" layoutX="421.0" layoutY="198.0" prefHeight="25.0" prefWidth="212.0" promptText="DOB" />
+      <JFXTextField focusColor="#001f9a" labelFloat="true" layoutX="976.0" layoutY="148.0" prefHeight="25.0" prefWidth="198.0" promptText="Contact Number" />
+      <JFXTextField focusColor="#001f9a" labelFloat="true" layoutX="66.0" layoutY="198.0" prefHeight="25.0" prefWidth="290.0" promptText="Address" />
+      <JFXTextField focusColor="#001f9a" labelFloat="true" layoutX="646.0" layoutY="148.0" prefHeight="25.0" prefWidth="61.0" promptText="Age" />
+      <JFXTextField focusColor="#001f9a" labelFloat="true" layoutX="689.0" layoutY="198.0" prefHeight="25.0" prefWidth="212.0" promptText="E-Mail" />
+      <CheckBox layoutX="980.0" layoutY="195.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="83.0" text="Male">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox layoutX="1080.0" layoutY="195.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="98.0" text="Female">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </CheckBox>
+      <JFXTextField labelFloat="true" layoutX="66.0" layoutY="453.0" prefHeight="25.0" prefWidth="290.0" promptText="Search" unFocusColor="BLACK">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="487.0" fitWidth="721.0" layoutX="270.0" layoutY="138.0" mouseTransparent="true" opacity="0.03" visible="false">
+         <image>
+            <Image url="@../assest/home.png" />
+         </image>
+      </ImageView>
+      <ToggleButton ellipsisString="" layoutX="1155.0" layoutY="13.0" mnemonicParsing="false" onAction="#btnBackToHomeOnAction" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: white;" styleClass="zoom2" stylesheets="@../style.css">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="33.0" styleClass="zoom2">
+               <image>
+                  <Image url="@../assest/Users-Exit-icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <JFXComboBox layoutX="66.0" layoutY="272.0" prefHeight="25.0" prefWidth="176.0" promptText="Programme ID" />
+      <JFXTextField labelFloat="true" layoutX="271.0" layoutY="271.0" prefHeight="25.0" prefWidth="220.0" promptText="Program" />
+      <JFXTextField labelFloat="true" layoutX="707.0" layoutY="270.0" prefHeight="25.0" prefWidth="176.0" promptText="Fee(LKR)" />
+      <JFXTextField labelFloat="true" layoutX="516.0" layoutY="271.0" prefHeight="25.0" prefWidth="148.0" promptText="Duration" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d5d9dd" height="160.0" layoutX="55.0" layoutY="258.0" opacity="0.23" stroke="BLACK" strokeType="INSIDE" width="1129.0" />
+      <JFXComboBox layoutX="66.0" layoutY="317.0" prefHeight="25.0" prefWidth="176.0" promptText="Programme ID" />
+      <JFXTextField labelFloat="true" layoutX="271.0" layoutY="316.0" prefHeight="25.0" prefWidth="220.0" promptText="Program" />
+      <JFXTextField labelFloat="true" layoutX="707.0" layoutY="315.0" prefHeight="25.0" prefWidth="176.0" promptText="Fee(LKR)" />
+      <JFXTextField labelFloat="true" layoutX="516.0" layoutY="316.0" prefHeight="25.0" prefWidth="148.0" promptText="Duration" />
+      <JFXComboBox layoutX="65.0" layoutY="365.0" prefHeight="25.0" prefWidth="176.0" promptText="Programme ID" />
+      <JFXTextField labelFloat="true" layoutX="270.0" layoutY="364.0" prefHeight="25.0" prefWidth="220.0" promptText="Program" />
+      <JFXTextField labelFloat="true" layoutX="708.0" layoutY="363.0" prefHeight="25.0" prefWidth="176.0" promptText="Fee(LKR)" />
+      <JFXTextField labelFloat="true" layoutX="515.0" layoutY="364.0" prefHeight="25.0" prefWidth="148.0" promptText="Duration" />
+      <Separator layoutX="37.0" layoutY="439.0" prefHeight="3.0" prefWidth="1158.0" />
+      <Button layoutX="968.0" layoutY="367.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #d63031; -fx-background-radius: 20;" text="REMOVE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="966.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: #0984e3; -fx-background-radius: 20;" text="ADD" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="968.0" layoutY="322.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #C4E538; -fx-background-radius: 20;" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <JFXTextField focusColor="#001f9a" labelFloat="true" layoutX="748.0" layoutY="148.0" prefHeight="25.0" prefWidth="198.0" promptText="NIC" />
+   </children>
+</AnchorPane>
