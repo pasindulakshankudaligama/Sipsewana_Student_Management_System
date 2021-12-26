@@ -13,6 +13,7 @@ public class Program implements SuperEntity{
     private String programName;
     private String duration;
     private double fee;
+
     @ManyToMany
     private List<Student> studentList;
 

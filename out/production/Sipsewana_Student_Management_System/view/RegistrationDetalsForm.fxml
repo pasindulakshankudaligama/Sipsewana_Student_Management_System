@@ -15,15 +15,15 @@
    <children>
       <ImageView fitHeight="102.0" fitWidth="148.0" layoutX="24.0" layoutY="43.0">
          <image>
-            <Image url="@../assest/home.png" />
+            <Image url="@../assets/home.png" />
          </image>
       </ImageView>
-      <Label layoutX="203.0" layoutY="3.0" prefHeight="140.0" prefWidth="812.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="249.0" layoutY="-3.0" prefHeight="140.0" prefWidth="721.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="63.0" />
          </font>
       </Label>
-      <Label layoutX="207.0" layoutY="53.0" prefHeight="140.0" prefWidth="812.0" text="REGISTRATION DETAILS" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="390.0" layoutY="48.0" prefHeight="140.0" prefWidth="482.0" text="REGISTRATION DETAILS" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="39.0" />
          </font>
@@ -42,7 +42,7 @@
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="33.0" styleClass="zoom2">
                <image>
-                  <Image url="@../assest/Users-Exit-icon.png" />
+                  <Image url="@../assets/Users-Exit-icon.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -89,7 +89,7 @@
             <TableColumn prefWidth="172.0" text="Name" />
             <TableColumn prefWidth="64.0" text="Age" />
             <TableColumn prefWidth="136.0" text="NIC" />
-            <TableColumn prefWidth="158.0" text="Contact Number" />
+            <TableColumn prefWidth="158.0" text="Contact" />
             <TableColumn prefWidth="165.0" text="Address" />
             <TableColumn prefWidth="121.0" text="DOB" />
             <TableColumn prefWidth="137.0" text="E-Mail" />

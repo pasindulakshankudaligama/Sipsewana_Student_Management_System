@@ -15,17 +15,17 @@
 
 <AnchorPane fx:id="cmContext" prefHeight="683.0" prefWidth="1219.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageCourseFormController">
    <children>
-      <ImageView fitHeight="102.0" fitWidth="148.0" layoutX="34.0" layoutY="53.0">
+      <ImageView fitHeight="114.0" fitWidth="165.0" layoutX="34.0" layoutY="41.0">
          <image>
-            <Image url="@../assest/home.png" />
+            <Image url="@../assets/home.png" />
          </image>
       </ImageView>
-      <Label layoutX="213.0" layoutY="13.0" prefHeight="140.0" prefWidth="812.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER">
+      <Label layoutX="204.0" layoutY="5.0" prefHeight="140.0" prefWidth="812.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER">
          <font>
             <Font name="Cooper Black" size="63.0" />
          </font>
       </Label>
-      <Label layoutX="217.0" layoutY="63.0" prefHeight="140.0" prefWidth="812.0" text="MANAGE COURSE FORM" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="342.0" layoutY="66.0" prefHeight="140.0" prefWidth="484.0" text="MANAGE COURSE FORM" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="39.0" />
          </font>
@@ -61,7 +61,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="536.0" layoutY="277.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: #0984e3; -fx-background-radius: 20;" text="ADD" textFill="WHITE">
+      <Button layoutX="536.0" layoutY="277.0" mnemonicParsing="false" onAction="#saveProgramOnAction" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: #0984e3; -fx-background-radius: 20;" text="ADD" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -75,7 +75,7 @@
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="33.0" styleClass="zoom2">
                <image>
-                  <Image url="@../assest/Users-Exit-icon.png" />
+                  <Image url="@../assets/Users-Exit-icon.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />

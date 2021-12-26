@@ -13,15 +13,15 @@
    <children>
       <ImageView fitHeight="166.0" fitWidth="241.0" layoutX="136.0" layoutY="26.0">
          <image>
-            <Image url="@../assest/home.png" />
+            <Image url="@../assets/home.png" />
          </image>
       </ImageView>
-      <Label layoutX="5.0" layoutY="151.0" prefHeight="140.0" prefWidth="503.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="5.0" layoutY="183.0" prefHeight="108.0" prefWidth="503.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER">
          <font>
             <Font name="Cooper Black" size="39.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="15.0" layoutY="192.0" prefHeight="140.0" prefWidth="494.0" text="LOGIN FORM">
+      <Label alignment="CENTER" layoutX="35.0" layoutY="262.0" prefHeight="82.0" prefWidth="441.0" text="LOGIN FORM" textAlignment="CENTER">
          <font>
             <Font name="Cooper Black" size="31.0" />
          </font>
@@ -41,6 +41,6 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </JFXButton>
-      <Label layoutX="178.0" layoutY="559.0" prefHeight="17.0" prefWidth="184.0" text="Design By : Jeewantha Madushan" />
+      <Label alignment="CENTER" layoutX="151.0" layoutY="559.0" prefHeight="17.0" prefWidth="208.0" text="Design By : Pasindu Lakshan." textAlignment="CENTER" />
    </children>
 </AnchorPane>

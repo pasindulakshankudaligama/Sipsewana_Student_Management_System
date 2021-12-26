@@ -1,9 +1,13 @@
+import entity.Student;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static javafx.application.Application.launch;
 
 public class AppInitializer extends Application {
 
@@ -18,4 +22,5 @@ public class AppInitializer extends Application {
         primaryStage.centerOnScreen();
         primaryStage.show();
     }
+
 }

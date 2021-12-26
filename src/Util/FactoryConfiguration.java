@@ -21,7 +21,7 @@ public class FactoryConfiguration {
     private FactoryConfiguration() {
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream("hibernate.properties"));
+            properties.load(new FileInputStream("src/hibernate.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -32,7 +32,7 @@ public class FactoryConfiguration {
 
 
         configuration.setProperties(properties);
-        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        sessionFactory = configuration.buildSessionFactory();
     }
 
     public static FactoryConfiguration getInstance() {

@@ -14,22 +14,22 @@
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="43.0" styleClass="zoom2">
                <image>
-                  <Image url="@../assest/Users-Exit-icon.png" />
+                  <Image url="@../assets/Users-Exit-icon.png" />
                </image>
             </ImageView>
          </graphic>
       </ToggleButton>
-      <Label layoutX="29.0" layoutY="201.0" prefHeight="140.0" prefWidth="812.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="61.0" layoutY="209.0" prefHeight="140.0" prefWidth="744.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER">
          <font>
             <Font name="Cooper Black" size="63.0" />
          </font>
       </Label>
-      <Label layoutX="327.0" layoutY="494.0" stylesheets="@../style.css" text="MANAGE REGISTRATION">
+      <Label layoutX="346.0" layoutY="494.0" prefHeight="70.0" prefWidth="217.0" stylesheets="@../style.css" text="MANAGE REGISTRATION" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="492.0" stylesheets="@../style.css" text="STUDENTS DETAILS">
+      <Label layoutX="58.0" layoutY="492.0" prefHeight="70.0" prefWidth="235.0" stylesheets="@../style.css" text="STUDENTS DETAILS" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
@@ -40,7 +40,7 @@
                <graphic>
                   <ImageView fitHeight="117.0" fitWidth="171.0" mouseTransparent="true" nodeOrientation="INHERIT" pickOnBounds="true" styleClass="zoom">
                      <image>
-                        <Image url="@../assest/sm.jpg" />
+                        <Image url="@../assets/sm.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -53,7 +53,7 @@
                <graphic>
                   <ImageView fitHeight="133.0" fitWidth="133.0" styleClass="zoom">
                      <image>
-                        <Image url="@../assest/unnamed.png" />
+                        <Image url="@../assets/unnamed.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -66,21 +66,21 @@
                <graphic>
                   <ImageView fitHeight="174.0" fitWidth="174.0" styleClass="zoom">
                      <image>
-                        <Image url="@../assest/registration-1.png" />
+                        <Image url="@../assets/registration-1.png" />
                      </image>
                   </ImageView>
                </graphic>
             </ToggleButton>
          </children>
       </Group>
-      <Label layoutX="641.0" layoutY="492.0" text="MANAGE COURSE">
+      <Label layoutX="641.0" layoutY="492.0" prefHeight="62.0" prefWidth="204.0" text="MANAGE PROGRAMS" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
       <ImageView fitHeight="196.0" fitWidth="284.0" layoutX="287.0" layoutY="28.0">
          <image>
-            <Image url="@../assest/home.png" />
+            <Image url="@../assets/home.png" />
          </image>
       </ImageView>
    </children>

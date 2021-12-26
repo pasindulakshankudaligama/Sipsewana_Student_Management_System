@@ -21,7 +21,8 @@ public class Student implements SuperEntity {
 
     @ManyToMany(mappedBy = "studentList")
     private List<Program> programList;
-   /* @OneToMany(mappedBy = "registerNumber")
+
+    /* @OneToMany(mappedBy = "registerNumber")
     private List<RegistrationDetails> registrationDetailsList;
 */
 
