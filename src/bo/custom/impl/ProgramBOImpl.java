@@ -2,6 +2,7 @@ package bo.custom.impl;
 
 import bo.custom.ProgramBO;
 import dao.DAOFactory;
+import dao.custom.impl.ProgramDAOImpl;
 import dto.ProgramDTO;
 import dto.StudentDTO;
 import entity.Program;
@@ -10,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProgramBOImpl implements ProgramBO {
-    ProgramBOImpl programBO = (ProgramBOImpl) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.PROGRAM);
+    ProgramDAOImpl programDAO = (ProgramDAOImpl) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.PROGRAM);
     @Override
     public boolean add(ProgramDTO programDTO) {
-        return programBO.add(new ProgramDTO(
+        return programDAO.add(new Program(
            programDTO.getProgramID(),
            programDTO.getProgramName(),
            programDTO.getDuration(),
@@ -23,12 +24,12 @@ public class ProgramBOImpl implements ProgramBO {
 
     @Override
     public List<ProgramDTO> find() {
-        List<ProgramDTO> list = programBO.find();
+        List<Program> list = programDAO.find();
         ArrayList<ProgramDTO> dtoArrayList = new ArrayList<>();
 
         ProgramDTO programDTO = null;
 
-        for (ProgramDTO program: list
+        for (Program program: list
              ) {
             dtoArrayList.add(new ProgramDTO(
                program.getProgramID(),
@@ -43,12 +44,12 @@ public class ProgramBOImpl implements ProgramBO {
 
     @Override
     public boolean delete(String id) {
-        return programBO.delete(id);
+        return programDAO.delete(id);
     }
 
     @Override
     public boolean update(ProgramDTO programDTO) {
-        return programBO.update(new ProgramDTO(
+        return programDAO.update(new Program(
                 programDTO.getProgramID(),
                 programDTO.getProgramName(),
                 programDTO.getDuration(),

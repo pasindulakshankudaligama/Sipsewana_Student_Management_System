@@ -53,7 +53,6 @@ public class ManageCourseFormController {
         Stage window = (Stage) cmContext.getScene().getWindow();
         window.setScene(new Scene(load));
         window.centerOnScreen();
-        //window.setResizable(false);
         System.out.println("");
     }
 }

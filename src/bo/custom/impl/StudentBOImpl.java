@@ -2,17 +2,19 @@ package bo.custom.impl;
 
 import bo.custom.StudentBO;
 import dao.DAOFactory;
+import dao.custom.impl.StudentDAOImpl;
 import dto.StudentDTO;
+import entity.Student;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StudentBOImpl implements StudentBO {
-    StudentBOImpl studentBO = (StudentBOImpl) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
+    StudentDAOImpl studentDAO = (StudentDAOImpl) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
 
     @Override
     public boolean add(StudentDTO studentDTO) {
-        return studentBO.add(new StudentDTO(
+        return studentDAO.add(new Student(
                 studentDTO.getRegNumber(),
                 studentDTO.getName(),
                 studentDTO.getAge(),
@@ -27,12 +29,12 @@ public class StudentBOImpl implements StudentBO {
 
     @Override
     public List<StudentDTO> find() {
-        List<StudentDTO> list = studentBO.find();
+        List<Student> list = studentDAO.find();
         ArrayList<StudentDTO> dtoArrayList = new ArrayList<>();
 
         StudentDTO studentDTO = null;
 
-        for (StudentDTO student : list
+        for (Student student : list
         ) {
             dtoArrayList.add(new StudentDTO(
                     student.getRegNumber(),
@@ -52,12 +54,12 @@ public class StudentBOImpl implements StudentBO {
 
     @Override
     public boolean delete(String id) {
-        return studentBO.delete(id);
+        return studentDAO.delete(id);
     }
 
     @Override
     public boolean update(StudentDTO studentDTO) {
-        return studentBO.update(new StudentDTO(
+        return studentDAO.update(new Student(
                 studentDTO.getRegNumber(),
                 studentDTO.getName(),
                 studentDTO.getAge(),

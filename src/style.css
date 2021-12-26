@@ -29,7 +29,7 @@
 }
 
 .table-view .table-row-cell:selected {
-/-fx-background-color:linear-gradient(to right, rgba(119, 8, 245, 0.29), rgba(15, 93, 255, 0.39));/
+
 -fx-background-color: linear-gradient(to right, rgba(0, 198, 255, 0.29), rgba(0, 114, 255, 0.39));
 }
 
@@ -44,7 +44,7 @@
 }
 
 .table-view .column-header-background {
-/-fx-background-color: #7708f5;/
+
 -fx-background-color: linear-gradient(to right, #1e3c72, #2a5298);
     -fx-background-radius: 20px 20px 0px 0px;
     -fx-background-insets: 0 0 0 0;

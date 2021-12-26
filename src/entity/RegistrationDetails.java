@@ -1,3 +1,4 @@
+/*
 package entity;
 
 import javax.persistence.Entity;
@@ -8,34 +9,39 @@ import javax.persistence.ManyToOne;
 @Entity
 public class RegistrationDetails implements SuperEntity {
     @Id
-    private String programID;
+    private String Id;
     @ManyToOne
     @JoinColumn(name = "registerNumber", referencedColumnName = "regNumber")
-    private String regNumber;
+    private Student regNumber;
     private String joiningDate;
 
+    @ManyToOne
+    @JoinColumn(name= "programID",referencedColumnName = "programID")
+      private Program program;
     public RegistrationDetails() {
     }
 
-    public RegistrationDetails(String programID, String regNumber, String joiningDate) {
-        this.setProgramID(programID);
+
+    public RegistrationDetails(String Id, Student regNumber, String joiningDate, Program program) {
+        this.setId(Id);
         this.setRegNumber(regNumber);
         this.setJoiningDate(joiningDate);
+        this.setProgram(program);
     }
 
-    public String getProgramID() {
-        return programID;
+    public String getId() {
+        return Id;
     }
 
-    public void setProgramID(String programID) {
-        this.programID = programID;
+    public void setId(String Id) {
+        this.Id = Id;
     }
 
-    public String getRegNumber() {
+    public Student getRegNumber() {
         return regNumber;
     }
 
-    public void setRegNumber(String regNumber) {
+    public void setRegNumber(Student regNumber) {
         this.regNumber = regNumber;
     }
 
@@ -47,12 +53,22 @@ public class RegistrationDetails implements SuperEntity {
         this.joiningDate = joiningDate;
     }
 
+    public Program getProgram() {
+        return program;
+    }
+
+    public void setProgram(Program program) {
+        this.program = program;
+    }
+
     @Override
     public String toString() {
         return "RegistrationDetails{" +
-                "programID='" + programID + '\'' +
-                ", regNumber='" + regNumber + '\'' +
+                "Id='" + Id + '\'' +
+                ", regNumber=" + regNumber +
                 ", joiningDate='" + joiningDate + '\'' +
+                ", program=" + program +
                 '}';
     }
 }
+*/
