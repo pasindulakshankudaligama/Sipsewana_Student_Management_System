@@ -98,7 +98,7 @@
             <Font name="Calisto MT Bold" size="24.0" />
          </font>
       </Label>
-      <TableView fx:id="tblProgram" layoutX="39.0" layoutY="418.0" prefHeight="228.0" prefWidth="1144.0">
+      <TableView fx:id="tblProgram" layoutX="39.0" layoutY="418.0" onMouseClicked="#onMouseClick" prefHeight="228.0" prefWidth="1144.0">
          <columns>
             <TableColumn fx:id="colProgramId" prefWidth="297.0" text="Programme ID" />
             <TableColumn fx:id="colProgramName" prefWidth="293.0" text="Programme Name" />

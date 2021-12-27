@@ -44,6 +44,7 @@ public class ProgramDAOImpl implements ProgramDAO {
         session.delete(program);
 
         transaction.commit();
+        session.close();
 
         return true;
     }

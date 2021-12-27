@@ -28,7 +28,7 @@
             <Font name="Cooper Black" size="39.0" />
          </font>
       </Label>
-      <JFXTextField labelFloat="true" layoutX="42.0" layoutY="175.0" prefHeight="37.0" prefWidth="412.0" promptText="Search" unFocusColor="BLACK">
+      <JFXTextField labelFloat="true" layoutX="42.0" layoutY="175.0" onKeyReleased="#keyEvent" prefHeight="37.0" prefWidth="412.0" promptText="Search" unFocusColor="BLACK">
          <font>
             <Font size="16.0" />
          </font>
@@ -60,12 +60,12 @@
             <Font name="Calisto MT Bold" size="24.0" />
          </font>
       </Label>
-      <TableView layoutX="38.0" layoutY="453.0" prefHeight="210.0" prefWidth="1142.0" stylesheets="@../style.css">
+      <TableView fx:id="tblProgram" layoutX="38.0" layoutY="453.0" prefHeight="210.0" prefWidth="1142.0" stylesheets="@../style.css">
          <columns>
-            <TableColumn prefWidth="297.0" text="Programme ID" />
-            <TableColumn prefWidth="293.0" text="Programme Name" />
-            <TableColumn prefWidth="280.0" text="Duration" />
-            <TableColumn prefWidth="270.0" text="Fee(LKR)" />
+            <TableColumn fx:id="colProgramId" prefWidth="297.0" text="Programme ID" />
+            <TableColumn fx:id="colProgramName" prefWidth="293.0" text="Programme Name" />
+            <TableColumn fx:id="colDuration" prefWidth="280.0" text="Duration" />
+            <TableColumn fx:id="colFee" prefWidth="270.0" text="Fee(LKR)" />
          </columns>
       </TableView>
       <Label layoutX="525.0" layoutY="419.0" prefHeight="28.0" prefWidth="211.0" text="COURSE DETAILS">
@@ -83,17 +83,17 @@
             <Font name="Cooper Black" size="21.0" />
          </font>
       </Label>
-      <TableView layoutX="38.0" layoutY="280.0" prefHeight="90.0" prefWidth="1142.0" stylesheets="@../style.css">
+      <TableView fx:id="tblStudent" layoutX="38.0" layoutY="280.0" prefHeight="90.0" prefWidth="1142.0" stylesheets="@../style.css">
          <columns>
-            <TableColumn prefWidth="82.0" text="Reg.No" />
-            <TableColumn prefWidth="172.0" text="Name" />
-            <TableColumn prefWidth="64.0" text="Age" />
-            <TableColumn prefWidth="136.0" text="NIC" />
-            <TableColumn prefWidth="158.0" text="Contact" />
-            <TableColumn prefWidth="165.0" text="Address" />
-            <TableColumn prefWidth="121.0" text="DOB" />
-            <TableColumn prefWidth="137.0" text="E-Mail" />
-            <TableColumn prefWidth="105.0" text="Gender" />
+            <TableColumn fx:id="colRegNum" prefWidth="82.0" text="Reg.No" />
+            <TableColumn fx:id="colName" prefWidth="172.0" text="Name" />
+            <TableColumn fx:id="colAge" prefWidth="64.0" text="Age" />
+            <TableColumn fx:id="colNIC" prefWidth="136.0" text="NIC" />
+            <TableColumn fx:id="colContact" prefWidth="158.0" text="Contact" />
+            <TableColumn fx:id="colAddress" prefWidth="165.0" text="Address" />
+            <TableColumn fx:id="colDOB" prefWidth="121.0" text="DOB" />
+            <TableColumn fx:id="colEmail" prefWidth="137.0" text="E-Mail" />
+            <TableColumn fx:id="colGender" prefWidth="105.0" text="Gender" />
          </columns>
       </TableView>
    </children>
