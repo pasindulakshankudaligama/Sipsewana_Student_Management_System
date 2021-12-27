@@ -11,6 +11,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -26,6 +29,21 @@ public class RegistrationDeatilsFormController {
     public AnchorPane rdContext;
     public Label lblDate;
     public Label lblTime;
+    public TableView tblProgram;
+    public TableColumn colProgramId;
+    public TableColumn colProgramName;
+    public TableColumn colDuration;
+    public TableColumn colFee;
+    public TableView tblStudent;
+    public TableColumn colRegNum;
+    public TableColumn colName;
+    public TableColumn colAge;
+    public TableColumn colNIC;
+    public TableColumn colContact;
+    public TableColumn colAddress;
+    public TableColumn colDOB;
+    public TableColumn colEmail;
+    public TableColumn colGender;
 
     StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.STUDENT);
     ProgramBOImpl programBO = (ProgramBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.PROGRAM);
@@ -58,5 +76,8 @@ public class RegistrationDeatilsFormController {
         window.setScene(new Scene(load));
         window.centerOnScreen();
        // window.setResizable(false);
+    }
+
+    public void keyEvent(KeyEvent keyEvent) {
     }
 }
