@@ -4,9 +4,12 @@ import Util.FactoryConfiguration;
 import dao.custom.ProgramDAO;
 import entity.Program;
 import entity.Student;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import view.tm.ProgramTM;
 
 import java.util.List;
 
@@ -56,6 +59,20 @@ public class ProgramDAOImpl implements ProgramDAO {
 
         Query query = session.createQuery("from Program");
         List<Program> list = query.list();
+
+        transaction.commit();
+        session.close();
+        return list;
+    }
+
+    @Override
+    public List<Program> searchPrograms(String value) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("FROM Program p WHERE p.programID LIKE ?1");
+        query.setParameter(1,'%'+value+'%');
+        List list = query.list();
 
         transaction.commit();
         session.close();

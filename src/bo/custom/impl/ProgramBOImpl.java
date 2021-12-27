@@ -4,24 +4,23 @@ import bo.custom.ProgramBO;
 import dao.DAOFactory;
 import dao.custom.impl.ProgramDAOImpl;
 import dto.ProgramDTO;
-import dto.StudentDTO;
 import entity.Program;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import view.tm.ProgramTM;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProgramBOImpl implements ProgramBO {
     ProgramDAOImpl programDAO = (ProgramDAOImpl) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.PROGRAM);
+
     @Override
     public boolean add(ProgramDTO programDTO) {
         return programDAO.add(new Program(
-           programDTO.getProgramID(),
-           programDTO.getProgramName(),
-           programDTO.getDuration(),
-           programDTO.getFee()
+                programDTO.getProgramID(),
+                programDTO.getProgramName(),
+                programDTO.getDuration(),
+                programDTO.getFee()
         ));
     }
 
@@ -32,13 +31,13 @@ public class ProgramBOImpl implements ProgramBO {
 
         ProgramDTO programDTO = null;
 
-        for (Program program: list
-             ) {
+        for (Program program : list
+        ) {
             dtoArrayList.add(new ProgramTM(
-               program.getProgramID(),
-               program.getProgramName(),
-               program.getDuration(),
-               program.getFee()
+                    program.getProgramID(),
+                    program.getProgramName(),
+                    program.getDuration(),
+                    program.getFee()
             ));
 
         }
@@ -58,5 +57,20 @@ public class ProgramBOImpl implements ProgramBO {
                 programDTO.getDuration(),
                 programDTO.getFee()
         ));
+    }
+
+    @Override
+    public ObservableList<ProgramTM> search(String value) {
+        List<Program> list = programDAO.searchPrograms(value);
+        ObservableList<ProgramTM> dtoArrayList = FXCollections.observableArrayList();
+        for (Program program : list
+        ) {
+            dtoArrayList.add(new ProgramTM(
+                    program.getProgramID(),
+                    program.getProgramName(),
+                    program.getDuration(),
+                    program.getFee()));
+        }
+        return dtoArrayList;
     }
 }

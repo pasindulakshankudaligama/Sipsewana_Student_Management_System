@@ -143,12 +143,17 @@ public class ManageCourseFormController {
         }
     }
 
-    public void clearOnAction(ActionEvent actionEvent) {
-
+    public void clearOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        txtProgramId.clear();
+        txtProgramName.clear();
+        txtDuration.clear();
+        txtFee.clear();
+        showProgramsOnTable();
     }
 
     public void keyEvent(KeyEvent keyEvent) {
-
+        ObservableList<ProgramTM> search = programBO.search(txtSearch.getText());
+        tblProgram.setItems(search);
     }
 
     public void onMouseClick(MouseEvent mouseEvent) {
