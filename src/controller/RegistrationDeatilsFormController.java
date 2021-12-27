@@ -6,6 +6,7 @@ import bo.custom.impl.StudentBOImpl;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,13 +14,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import view.tm.ProgramTM;
+import view.tm.StudentTM;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Date;
@@ -29,12 +34,12 @@ public class RegistrationDeatilsFormController {
     public AnchorPane rdContext;
     public Label lblDate;
     public Label lblTime;
-    public TableView tblProgram;
+    public TableView<ProgramTM> tblProgram;
     public TableColumn colProgramId;
     public TableColumn colProgramName;
     public TableColumn colDuration;
     public TableColumn colFee;
-    public TableView tblStudent;
+    public TableView<StudentTM> tblStudent;
     public TableColumn colRegNum;
     public TableColumn colName;
     public TableColumn colAge;
@@ -50,6 +55,15 @@ public class RegistrationDeatilsFormController {
 
     public void initialize(){
         loadDateAndTime();
+
+        try {
+            showStudentsOnTable();
+            showProgramsOnTable();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private void loadDateAndTime() {
@@ -79,5 +93,31 @@ public class RegistrationDeatilsFormController {
     }
 
     public void keyEvent(KeyEvent keyEvent) {
+    }
+    private void showStudentsOnTable() {
+        ObservableList<StudentTM> list = studentBO.find();
+
+        colRegNum.setCellValueFactory(new PropertyValueFactory<>("regNumber"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colAge.setCellValueFactory(new PropertyValueFactory<>("age"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colDOB.setCellValueFactory(new PropertyValueFactory<>("dob"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colNIC.setCellValueFactory(new PropertyValueFactory<>("nic"));
+        colGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
+
+        tblStudent.setItems(list);
+    }
+    public void showProgramsOnTable() throws SQLException, ClassNotFoundException {
+
+        ObservableList<ProgramTM> list = programBO.find();
+
+        colProgramId.setCellValueFactory(new PropertyValueFactory<>("programID"));
+        colProgramName.setCellValueFactory(new PropertyValueFactory<>("programName"));
+        colDuration.setCellValueFactory(new PropertyValueFactory<>("duration"));
+        colFee.setCellValueFactory(new PropertyValueFactory<>("fee"));
+
+        tblProgram.setItems(list);
     }
 }

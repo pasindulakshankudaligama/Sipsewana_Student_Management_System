@@ -4,7 +4,12 @@ import bo.custom.StudentBO;
 import dao.DAOFactory;
 import dao.custom.impl.StudentDAOImpl;
 import dto.StudentDTO;
+import entity.Program;
 import entity.Student;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import view.tm.ProgramTM;
+import view.tm.StudentTM;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,15 +33,15 @@ public class StudentBOImpl implements StudentBO {
     }
 
     @Override
-    public List<StudentDTO> find() {
+    public ObservableList<StudentTM> find() {
         List<Student> list = studentDAO.find();
-        ArrayList<StudentDTO> dtoArrayList = new ArrayList<>();
+        ObservableList<StudentTM> dtoArrayList = FXCollections.observableArrayList();
 
         StudentDTO studentDTO = null;
 
         for (Student student : list
         ) {
-            dtoArrayList.add(new StudentDTO(
+            dtoArrayList.add(new StudentTM(
                     student.getRegNumber(),
                     student.getName(),
                     student.getAge(),
@@ -70,5 +75,26 @@ public class StudentBOImpl implements StudentBO {
                 studentDTO.getNic(),
                 studentDTO.getGender()
         ));
+    }
+
+    @Override
+    public ObservableList<StudentTM> search(String value) {
+        List<Student> list = studentDAO.searchStudents(value);
+        ObservableList<StudentTM> dtoArrayList = FXCollections.observableArrayList();
+        for (Student student : list
+        ) {
+            dtoArrayList.add(new StudentTM(
+                    student.getRegNumber(),
+                    student.getName(),
+                    student.getAge(),
+                    student.getContactNumber(),
+                    student.getAddress(),
+                    student.getDob(),
+                    student.getEmail(),
+                    student.getNic(),
+                    student.getGender()));
+        }
+        return dtoArrayList;
+
     }
 }
