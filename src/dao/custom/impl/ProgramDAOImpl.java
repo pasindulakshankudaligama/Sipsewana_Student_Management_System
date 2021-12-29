@@ -2,14 +2,11 @@ package dao.custom.impl;
 
 import Util.FactoryConfiguration;
 import dao.custom.ProgramDAO;
+import dto.ProgramDTO;
 import entity.Program;
-import entity.Student;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import view.tm.ProgramTM;
 
 import java.util.List;
 
@@ -71,7 +68,7 @@ public class ProgramDAOImpl implements ProgramDAO {
         Transaction transaction = session.beginTransaction();
 
         Query query = session.createQuery("FROM Program p WHERE p.programID LIKE ?1");
-        query.setParameter(1,'%'+value+'%');
+        query.setParameter(1, '%' + value + '%');
         List list = query.list();
 
         transaction.commit();
@@ -90,5 +87,34 @@ public class ProgramDAOImpl implements ProgramDAO {
         transaction.commit();
         session.close();
         return list;
+    }
+
+    @Override
+    public ProgramDTO getProgramList(String id) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("FROM Program p WHERE p.programID = ?1");
+        query.setParameter(1, id);
+        List<Program> resultList = query.getResultList();
+
+        transaction.commit();
+        session.close();
+
+        ProgramDTO programDTO = null;
+
+        if (!resultList.isEmpty()) {
+            for (Program list : resultList
+            ) {
+                programDTO = new ProgramDTO(
+                        list.getProgramName(),
+                        list.getDuration(),
+                        list.getFee()
+                );
+            }
+            return programDTO;
+        } else {
+            return null;
+        }
     }
 }

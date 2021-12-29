@@ -94,6 +94,7 @@ public class RegistrationDeatilsFormController {
 
     public void keyEvent(KeyEvent keyEvent) {
     }
+
     private void showStudentsOnTable() {
         ObservableList<StudentTM> list = studentBO.find();
 
@@ -109,6 +110,7 @@ public class RegistrationDeatilsFormController {
 
         tblStudent.setItems(list);
     }
+
     public void showProgramsOnTable() throws SQLException, ClassNotFoundException {
 
         ObservableList<ProgramTM> list = programBO.find();

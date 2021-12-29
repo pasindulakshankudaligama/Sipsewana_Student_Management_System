@@ -112,7 +112,6 @@ public class ManageCourseFormController {
         tblProgram.setItems(list);
     }
 
-
     public void removeProgramOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         ProgramTM selectedItem = tblProgram.getSelectionModel().getSelectedItem();
         String programId = selectedItem.getProgramID();

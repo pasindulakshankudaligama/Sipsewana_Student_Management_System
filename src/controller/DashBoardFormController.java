@@ -12,7 +12,6 @@ import java.net.URL;
 
 public class DashBoardFormController {
 
-
     public AnchorPane DashBoardContext;
 
     public void btnManageStudentDetailsOnAction(ActionEvent actionEvent) throws IOException {

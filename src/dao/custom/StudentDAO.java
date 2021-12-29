@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface StudentDAO extends SuperDAO<Student,String> {
     List<Student> searchStudents(String value);
+
 }

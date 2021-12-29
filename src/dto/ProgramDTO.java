@@ -16,6 +16,12 @@ public class ProgramDTO {
         this.setFee(fee);
     }
 
+    public ProgramDTO(String programName, String duration, double fee) {
+        this.programName = programName;
+        this.duration = duration;
+        this.fee = fee;
+    }
+
     public String getProgramID() {
         return programID;
     }
