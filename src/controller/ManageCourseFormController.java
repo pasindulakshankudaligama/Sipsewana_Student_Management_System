@@ -95,6 +95,7 @@ public class ManageCourseFormController {
         if (programBO.add(programDTO)) {
             new Alert(Alert.AlertType.CONFIRMATION, "ProgramDTO Add To Database").show();
             showProgramsOnTable();
+            clear();
         } else {
             new Alert(Alert.AlertType.WARNING, "Try Again").show();
         }
@@ -119,6 +120,7 @@ public class ManageCourseFormController {
         if (programBO.delete(programId)) {
             new Alert(Alert.AlertType.CONFIRMATION, "Deleted").show();
             showProgramsOnTable();
+            clear();
         } else {
             new Alert(Alert.AlertType.WARNING, "Try Again").show();
         }
@@ -137,17 +139,23 @@ public class ManageCourseFormController {
         if (programBO.update(program)) {
             new Alert(Alert.AlertType.CONFIRMATION, "Program Updated").show();
             showProgramsOnTable();
+            clear();
         } else {
             new Alert(Alert.AlertType.WARNING, "Try Again").show();
         }
     }
 
     public void clearOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+      clear();
+
+    }
+
+    private void clear(){
         txtProgramId.clear();
         txtProgramName.clear();
         txtDuration.clear();
         txtFee.clear();
-        showProgramsOnTable();
+
     }
 
     public void keyEvent(KeyEvent keyEvent) {

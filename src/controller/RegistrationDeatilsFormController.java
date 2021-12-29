@@ -113,13 +113,13 @@ public class RegistrationDeatilsFormController {
 
     public void showProgramsOnTable() throws SQLException, ClassNotFoundException {
 
-        ObservableList<ProgramTM> list = programBO.find();
+       // ObservableList<ProgramTM> list = programBO.find();
 
         colProgramId.setCellValueFactory(new PropertyValueFactory<>("programID"));
         colProgramName.setCellValueFactory(new PropertyValueFactory<>("programName"));
         colDuration.setCellValueFactory(new PropertyValueFactory<>("duration"));
         colFee.setCellValueFactory(new PropertyValueFactory<>("fee"));
 
-        tblProgram.setItems(list);
+       // tblProgram.setItems(list);
     }
 }
