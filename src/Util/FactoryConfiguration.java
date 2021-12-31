@@ -27,8 +27,7 @@ public class FactoryConfiguration {
         }
         org.hibernate.cfg.Configuration configuration = new Configuration()
                 .addAnnotatedClass(Student.class)
-                .addAnnotatedClass(Program.class)
-               /* .addAnnotatedClass(RegistrationDetails.class)*/;
+                .addAnnotatedClass(Program.class);
 
 
         configuration.setProperties(properties);

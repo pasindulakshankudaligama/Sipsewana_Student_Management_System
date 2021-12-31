@@ -53,7 +53,7 @@ public class RegistrationDeatilsFormController {
     StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.STUDENT);
     ProgramBOImpl programBO = (ProgramBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.PROGRAM);
 
-    public void initialize(){
+    public void initialize() {
         loadDateAndTime();
 
         try {
@@ -71,10 +71,10 @@ public class RegistrationDeatilsFormController {
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         lblDate.setText(f.format(date));
 
-        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e->{
+        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
             lblTime.setText(
-                    currentTime.getHour()+ " : "+currentTime.getMinute()+ " : "+currentTime.getSecond()
+                    currentTime.getHour() + " : " + currentTime.getMinute() + " : " + currentTime.getSecond()
             );
         }),
                 new KeyFrame(Duration.seconds(1))
@@ -89,7 +89,7 @@ public class RegistrationDeatilsFormController {
         Stage window = (Stage) rdContext.getScene().getWindow();
         window.setScene(new Scene(load));
         window.centerOnScreen();
-       // window.setResizable(false);
+        // window.setResizable(false);
     }
 
     public void keyEvent(KeyEvent keyEvent) {
@@ -113,13 +113,13 @@ public class RegistrationDeatilsFormController {
 
     public void showProgramsOnTable() throws SQLException, ClassNotFoundException {
 
-       // ObservableList<ProgramTM> list = programBO.find();
+        // ObservableList<ProgramTM> list = programBO.find();
 
         colProgramId.setCellValueFactory(new PropertyValueFactory<>("programID"));
         colProgramName.setCellValueFactory(new PropertyValueFactory<>("programName"));
         colDuration.setCellValueFactory(new PropertyValueFactory<>("duration"));
         colFee.setCellValueFactory(new PropertyValueFactory<>("fee"));
 
-       // tblProgram.setItems(list);
+        // tblProgram.setItems(list);
     }
 }

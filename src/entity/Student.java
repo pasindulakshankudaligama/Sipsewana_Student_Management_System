@@ -3,7 +3,7 @@ package entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,17 +19,25 @@ public class Student implements SuperEntity {
     private String nic;
     private String gender;
 
-    @ManyToMany(mappedBy = "studentList")
-    private List<Program> programList;
-
-    /* @OneToMany(mappedBy = "registerNumber")
-    private List<RegistrationDetails> registrationDetailsList;
-*/
+    @ManyToMany
+    private List<Program> programList = new ArrayList<>();
 
     public Student() {
     }
 
     public Student(String regNumber, String name, int age, String contactNumber, String address, String dob, String email, String nic, String gender) {
+        this.setRegNumber(regNumber);
+        this.setName(name);
+        this.setAge(age);
+        this.setContactNumber(contactNumber);
+        this.setAddress(address);
+        this.setDob(dob);
+        this.setEmail(email);
+        this.setNic(nic);
+        this.setGender(gender);
+    }
+
+    public Student(String regNumber, String name, int age, String contactNumber, String address, String dob, String email, String nic, String gender, List<Program> programList) {
         this.regNumber = regNumber;
         this.name = name;
         this.age = age;
@@ -39,9 +47,8 @@ public class Student implements SuperEntity {
         this.email = email;
         this.nic = nic;
         this.gender = gender;
+        this.programList = programList;
     }
-
-
 
     public String getRegNumber() {
         return regNumber;
@@ -115,18 +122,27 @@ public class Student implements SuperEntity {
         this.gender = gender;
     }
 
+    public List<Program> getProgramList() {
+        return programList;
+    }
+
+    public void setProgramList(List<Program> programList) {
+        this.programList = programList;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "regNumber='" + regNumber + '\'' +
                 ", name='" + name + '\'' +
-                ", age='" + age + '\'' +
+                ", age=" + age +
                 ", contactNumber='" + contactNumber + '\'' +
                 ", address='" + address + '\'' +
                 ", dob='" + dob + '\'' +
                 ", email='" + email + '\'' +
                 ", nic='" + nic + '\'' +
                 ", gender='" + gender + '\'' +
+                ", programList=" + programList +
                 '}';
     }
 }

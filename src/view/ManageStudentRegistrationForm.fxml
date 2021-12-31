@@ -112,7 +112,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="1006.0" layoutY="322.0" mnemonicParsing="false" onAction="#updateProgramOnAction" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #C4E538; -fx-background-radius: 20;" text="UPDATE" textFill="WHITE">
+      <Button layoutX="1006.0" layoutY="322.0" mnemonicParsing="false" onAction="#updateProgramOnAction" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #C4E538; -fx-background-radius: 20;" text="Add Program" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
