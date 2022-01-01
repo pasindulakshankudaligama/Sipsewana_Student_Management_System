@@ -3,6 +3,7 @@ package bo.custom;
 import bo.SuperBO;
 import dto.ProgramDTO;
 import dto.StudentDTO;
+import entity.Program;
 import javafx.collections.ObservableList;
 import view.tm.ProgramTM;
 
@@ -22,4 +23,6 @@ public interface ProgramBO extends SuperBO {
     List<String> getAllProgramIds();
 
     ProgramDTO getProgramDetails(String id);
+
+    ObservableList<Program> findStudentProgram();
 }
