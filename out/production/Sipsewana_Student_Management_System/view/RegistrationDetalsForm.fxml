@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="102.0" fitWidth="148.0" layoutX="24.0" layoutY="43.0">
          <image>
-            <Image url="@../assets/home.png" />
+            <Image url="@../assets/institue.jpg" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="249.0" layoutY="-3.0" prefHeight="140.0" prefWidth="721.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER" wrapText="true">
@@ -28,7 +28,7 @@
             <Font name="Cooper Black" size="39.0" />
          </font>
       </Label>
-      <JFXTextField labelFloat="true" layoutX="42.0" layoutY="175.0" onKeyReleased="#keyEvent" prefHeight="37.0" prefWidth="412.0" promptText="Search" unFocusColor="BLACK">
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="42.0" layoutY="175.0" onKeyReleased="#keyEvent" prefHeight="37.0" prefWidth="412.0" promptText="Search" unFocusColor="BLACK">
          <font>
             <Font size="16.0" />
          </font>
@@ -75,7 +75,7 @@
       </Label>
       <ImageView fitHeight="487.0" fitWidth="727.0" layoutX="250.0" layoutY="139.0" mouseTransparent="true" opacity="0.07">
          <image>
-            <Image url="@../assest/home.png" />
+            <Image url="@../assets/institue.jpg" />
          </image>
       </ImageView>
       <Label layoutX="525.0" layoutY="252.0" prefHeight="28.0" prefWidth="222.0" text="STUDENT DETAILS">
@@ -83,7 +83,7 @@
             <Font name="Cooper Black" size="21.0" />
          </font>
       </Label>
-      <TableView fx:id="tblStudent" layoutX="38.0" layoutY="280.0" prefHeight="90.0" prefWidth="1142.0" stylesheets="@../style.css">
+      <TableView fx:id="tblStudent" layoutX="38.0" layoutY="280.0" onMouseClicked="#onMouseClick" prefHeight="90.0" prefWidth="1142.0" stylesheets="@../style.css">
          <columns>
             <TableColumn fx:id="colRegNum" prefWidth="82.0" text="Reg.No" />
             <TableColumn fx:id="colName" prefWidth="172.0" text="Name" />

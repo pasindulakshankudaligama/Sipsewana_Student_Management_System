@@ -22,11 +22,11 @@ public class DAOFactory {
     public UltraSuperDAO getDAO(DAOTypes types) {
         switch (types) {
             case STUDENT:
-                return (UltraSuperDAO) new StudentDAOImpl();
+                return new StudentDAOImpl();
             case PROGRAM:
-                return (UltraSuperDAO) new ProgramDAOImpl();
+                return new ProgramDAOImpl();
             case QUERY:
-                return (UltraSuperDAO) new QueryDAOImpl();
+                return new QueryDAOImpl();
             default:
                 return null;
         }

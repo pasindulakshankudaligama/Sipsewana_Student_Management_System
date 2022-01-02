@@ -23,7 +23,7 @@
    <children>
       <ImageView fitHeight="102.0" fitWidth="148.0" layoutX="14.0" layoutY="21.0">
          <image>
-            <Image url="@../assets/home.png" />
+            <Image url="@../assets/institue.jpg" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="240.0" layoutY="-15.0" prefHeight="140.0" prefWidth="732.0" text="SIPSEWANA INSTITUTE" textAlignment="CENTER" wrapText="true">
@@ -59,21 +59,22 @@
             <Font name="Cooper Black" size="39.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtRegNum" focusColor="#001f9a" labelFloat="true" layoutX="66.0" layoutY="148.0" prefHeight="25.0" prefWidth="148.0" promptText="Reg.No" />
-      <JFXTextField fx:id="txtName" focusColor="#001f9a" labelFloat="true" layoutX="271.0" layoutY="148.0" prefHeight="25.0" prefWidth="329.0" promptText="Name" />
-      <JFXTextField fx:id="txtDOB" focusColor="#001f9a" labelFloat="true" layoutX="421.0" layoutY="198.0" prefHeight="25.0" prefWidth="212.0" promptText="DOB" />
-      <JFXTextField fx:id="txtContactNumber" focusColor="#001f9a" labelFloat="true" layoutX="976.0" layoutY="148.0" prefHeight="25.0" prefWidth="198.0" promptText="Contact Number" />
-      <JFXTextField fx:id="txtAddress" focusColor="#001f9a" labelFloat="true" layoutX="66.0" layoutY="198.0" prefHeight="25.0" prefWidth="290.0" promptText="Address" />
-      <JFXTextField fx:id="txtAge" focusColor="#001f9a" labelFloat="true" layoutX="646.0" layoutY="148.0" prefHeight="25.0" prefWidth="61.0" promptText="Age" />
-      <JFXTextField fx:id="txtEmail" focusColor="#001f9a" labelFloat="true" layoutX="689.0" layoutY="198.0" prefHeight="25.0" prefWidth="212.0" promptText="E-Mail" />
+      <JFXTextField fx:id="txtRegNum" focusColor="#001f9a" labelFloat="true" layoutX="66.0" layoutY="148.0" onKeyReleased="#studentKeyEvent" prefHeight="25.0" prefWidth="148.0" promptText="Reg.No" />
+      <JFXTextField fx:id="txtName" focusColor="#001f9a" labelFloat="true" layoutX="271.0" layoutY="148.0" onKeyReleased="#studentKeyEvent" prefHeight="25.0" prefWidth="329.0" promptText="Name" />
+      <JFXTextField fx:id="txtAge" focusColor="#001f9a" labelFloat="true" layoutX="646.0" layoutY="148.0" onKeyReleased="#studentKeyEvent" prefHeight="25.0" prefWidth="61.0" promptText="Age" />
+      <JFXTextField fx:id="txtNIC" focusColor="#001f9a" labelFloat="true" layoutX="748.0" layoutY="148.0" onKeyReleased="#studentKeyEvent" prefHeight="25.0" prefWidth="198.0" promptText="NIC" />
+      <JFXTextField fx:id="txtContactNumber" focusColor="#001f9a" labelFloat="true" layoutX="976.0" layoutY="148.0" onKeyReleased="#studentKeyEvent" prefHeight="25.0" prefWidth="198.0" promptText="Contact Number" />
+      <JFXTextField fx:id="txtAddress" focusColor="#001f9a" labelFloat="true" layoutX="66.0" layoutY="198.0" onKeyReleased="#studentKeyEvent" prefHeight="25.0" prefWidth="290.0" promptText="Address" />
+      <JFXTextField fx:id="txtDOB" focusColor="#001f9a" labelFloat="true" layoutX="421.0" layoutY="198.0" onKeyReleased="#studentKeyEvent" prefHeight="25.0" prefWidth="212.0" promptText="DOB" />
+      <JFXTextField fx:id="txtEmail" focusColor="#001f9a" labelFloat="true" layoutX="689.0" layoutY="198.0" onKeyReleased="#studentKeyEvent" prefHeight="25.0" prefWidth="212.0" promptText="E-Mail" />
       <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="66.0" layoutY="453.0" onKeyReleased="#keyEvent" prefHeight="25.0" prefWidth="290.0" promptText="Search" unFocusColor="BLACK">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <ImageView fitHeight="487.0" fitWidth="721.0" layoutX="270.0" layoutY="138.0" mouseTransparent="true" opacity="0.22">
+      <ImageView fitHeight="487.0" fitWidth="721.0" layoutX="270.0" layoutY="138.0" mouseTransparent="true" opacity="0.07">
          <image>
-            <Image url="@../assets/home.png" />
+            <Image url="@../assets/institue.jpg" />
          </image>
       </ImageView>
       <ToggleButton ellipsisString="" layoutX="1155.0" layoutY="13.0" mnemonicParsing="false" onAction="#btnBackToHomeOnAction" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: white;" styleClass="zoom2" stylesheets="@../style.css">
@@ -107,7 +108,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="1004.0" layoutY="278.0" mnemonicParsing="false" onAction="#saveProgramOnAction" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: #0984e3; -fx-background-radius: 20;" text="ADD" textFill="WHITE">
+      <Button fx:id="btnAdd" layoutX="1004.0" layoutY="278.0" mnemonicParsing="false" onAction="#saveProgramOnAction" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: #0984e3; -fx-background-radius: 20;" text="ADD" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -117,7 +118,6 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <JFXTextField fx:id="txtNIC" focusColor="#001f9a" labelFloat="true" layoutX="748.0" layoutY="148.0" prefHeight="25.0" prefWidth="198.0" promptText="NIC" />
       <JFXRadioButton fx:id="txtMale" layoutX="984.0" layoutY="206.0" prefHeight="26.0" prefWidth="59.0" selected="true" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="gender" />

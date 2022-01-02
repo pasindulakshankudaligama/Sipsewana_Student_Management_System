@@ -1,5 +1,6 @@
 package controller;
 
+import Util.ValidationUtil;
 import bo.BOFactory;
 import bo.custom.impl.ProgramBOImpl;
 import bo.custom.impl.StudentBOImpl;
@@ -22,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -34,7 +36,9 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class ManageStudentRegistrationFormController {
     public AnchorPane srContext;
@@ -77,6 +81,7 @@ public class ManageStudentRegistrationFormController {
     public JFXCheckBox cb3;
     public JFXCheckBox cb2;
     public JFXCheckBox cb;
+    public Button btnAdd;
     String cmb1;
     String cmb2;
     String cmb3;
@@ -84,6 +89,15 @@ public class ManageStudentRegistrationFormController {
     StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.STUDENT);
     ProgramBOImpl programBO = (ProgramBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.PROGRAM);
     StudentDAOImpl studentDAO = (StudentDAOImpl) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
+    LinkedHashMap<JFXTextField, Pattern> map = new LinkedHashMap<>();
+    Pattern studentIdPattern = Pattern.compile("^(C)[-]?[0-9]{3}$");
+    Pattern studentNamePattern = Pattern.compile("^[A-z ]{1,30}$");
+    Pattern studentNicPattern = Pattern.compile("^[0-9]{9}[v]|[0-9]{12}$");
+    Pattern studentAddressPattern = Pattern.compile("^[A-z0-9/]{6,30}$");
+    Pattern studentTeleNumberPattern = Pattern.compile("^[0-9]{10}$");
+    Pattern studentAgePattern = Pattern.compile("^[0-9]{2}$");
+    Pattern studentEmailPattern = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+    Pattern studentDobPattern = Pattern.compile("^([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)\\d{4}$");
 
     public void initialize() {
         loadDateAndTime();
@@ -105,6 +119,7 @@ public class ManageStudentRegistrationFormController {
             cmb3=newValue;
         });
 
+        storeValidations();
     }
 
     private void loadDateAndTime() {
@@ -304,6 +319,30 @@ public class ManageStudentRegistrationFormController {
         txtFee1.clear();
         txtFee2.clear();
         txtFee3.clear();
+    }
+
+    private void storeValidations() {
+        map.put(txtRegNum,studentIdPattern);
+        map.put(txtName,studentNamePattern);
+        map.put(txtAge,studentAgePattern);
+        map.put(txtNIC,studentNicPattern);
+        map.put(txtContactNumber,studentTeleNumberPattern);
+        map.put(txtAddress,studentAddressPattern);
+        map.put(txtDOB,studentDobPattern);
+        map.put(txtEmail,studentEmailPattern);
+    }
+
+    public void studentKeyEvent(KeyEvent keyEvent) {
+        btnAdd.setDisable(true);
+        Object response = ValidationUtil.validate(map,btnAdd);
+        if (keyEvent.getCode()== KeyCode.ENTER) {
+            if (response instanceof TextField){
+                TextField error  = (TextField) response;
+                error.requestFocus();
+            }else if (response instanceof Boolean){
+                new Alert(Alert.AlertType.CONFIRMATION, "Done").show();
+            }
+        }
     }
 }
 

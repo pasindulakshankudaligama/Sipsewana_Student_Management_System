@@ -3,6 +3,7 @@ package controller;
 import bo.BOFactory;
 import bo.custom.impl.ProgramBOImpl;
 import bo.custom.impl.StudentBOImpl;
+import com.jfoenix.controls.JFXTextField;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -16,6 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -24,7 +26,6 @@ import view.tm.StudentTM;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Date;
@@ -49,21 +50,14 @@ public class RegistrationDeatilsFormController {
     public TableColumn colDOB;
     public TableColumn colEmail;
     public TableColumn colGender;
+    public JFXTextField txtSearch;
 
     StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.STUDENT);
     ProgramBOImpl programBO = (ProgramBOImpl) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.PROGRAM);
 
     public void initialize() {
         loadDateAndTime();
-
-        try {
-            showStudentsOnTable();
-            showProgramsOnTable();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        showStudentsOnTable();
     }
 
     private void loadDateAndTime() {
@@ -92,8 +86,6 @@ public class RegistrationDeatilsFormController {
         // window.setResizable(false);
     }
 
-    public void keyEvent(KeyEvent keyEvent) {
-    }
 
     private void showStudentsOnTable() {
         ObservableList<StudentTM> list = studentBO.find();
@@ -111,15 +103,23 @@ public class RegistrationDeatilsFormController {
         tblStudent.setItems(list);
     }
 
-    public void showProgramsOnTable() throws SQLException, ClassNotFoundException {
 
-        // ObservableList<ProgramTM> list = programBO.find();
+    public void onMouseClick(MouseEvent mouseEvent) {
+        StudentTM selectedItem = tblStudent.getSelectionModel().getSelectedItem();
+        String regNumber = selectedItem.getRegNumber();
+        ObservableList<ProgramTM> studentPrograms = programBO.findStudentProgram(regNumber);
+        tblProgram.setItems(studentPrograms);
 
         colProgramId.setCellValueFactory(new PropertyValueFactory<>("programID"));
         colProgramName.setCellValueFactory(new PropertyValueFactory<>("programName"));
         colDuration.setCellValueFactory(new PropertyValueFactory<>("duration"));
         colFee.setCellValueFactory(new PropertyValueFactory<>("fee"));
 
-        // tblProgram.setItems(list);
+
+    }
+
+    public void keyEvent(KeyEvent keyEvent) {
+        ObservableList<StudentTM> search = studentBO.search(txtSearch.getText());
+        tblStudent.setItems(search);
     }
 }

@@ -7,5 +7,5 @@ import javafx.collections.ObservableList;
 import java.util.List;
 
 public interface QueryDAO extends UltraSuperDAO {
-    ObservableList<Program> findProgramDetails();
+    List<Program> findProgramDetails(String value);
 }

@@ -36,15 +36,12 @@
       </Label>
       <Group layoutX="39.0" layoutY="364.0" styleClass="zoom" stylesheets="@../style.css">
          <children>
-            <ToggleButton alignment="TOP_LEFT" ellipsisString="" layoutX="40.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnManageStudentDetailsOnAction" prefHeight="117.0" prefWidth="171.0" style="-fx-background-color: white;" styleClass="zoom" stylesheets="@../style.css">
-               <graphic>
-                  <ImageView fitHeight="117.0" fitWidth="171.0" mouseTransparent="true" nodeOrientation="INHERIT" pickOnBounds="true" styleClass="zoom">
-                     <image>
-                        <Image url="@../assets/sm.jpg" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </ToggleButton>
+            <ToggleButton alignment="TOP_LEFT" ellipsisString="" layoutX="40.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnManageStudentDetailsOnAction" prefHeight="117.0" prefWidth="171.0" style="-fx-background-color: white;" styleClass="zoom" stylesheets="@../style.css" />
+            <ImageView fitHeight="149.0" fitWidth="171.0" layoutX="47.0" layoutY="-11.0" mouseTransparent="true" nodeOrientation="INHERIT" pickOnBounds="true" styleClass="zoom">
+               <image>
+                  <Image url="@../assets/student.jpg" />
+               </image>
+            </ImageView>
          </children>
       </Group>
       <Group layoutX="345.0" layoutY="356.0" styleClass="zoom" stylesheets="@../style.css">
@@ -78,9 +75,9 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fitHeight="196.0" fitWidth="284.0" layoutX="287.0" layoutY="28.0">
+      <ImageView fitHeight="227.0" fitWidth="284.0" layoutX="287.0" layoutY="13.0">
          <image>
-            <Image url="@../assets/home.png" />
+            <Image url="@../assets/institue.jpg" />
          </image>
       </ImageView>
    </children>
